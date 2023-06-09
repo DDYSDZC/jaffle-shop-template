@@ -1,0 +1,29 @@
+{
+  "cents_to_dollars" : {
+    "name" : "cents_to_dollars",
+    "macroType" : "expression",
+    "definition" : "({{column_name}} / 100)::numeric(16, {{precision}})",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "column_name",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "precision",
+        "kind" : {
+          "type" : "value",
+          "value" : "2"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      } ]
+    },
+    "staleState" : "none"
+  }
+}

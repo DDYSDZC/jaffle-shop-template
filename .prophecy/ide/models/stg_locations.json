@@ -1,0 +1,129 @@
+{
+  "id" : "stg_locations",
+  "metainfo" : {
+    "label" : "stg_locations",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    }
+  },
+  "processes" : {
+    "source##BXQFiARM" : {
+      "id" : "source##BXQFiARM",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "source",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "SELECT *\n\nFROM {{ source('ecom', 'raw_stores') }}\n{#data runs to 2026, truncate timespan to desired range,\ncurrent time as default#}\n\nWHERE opened_at <= {{ var('truncate_timespan_to')}}\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "HFsE3YAR",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "renamed##Bk0ZotZK" : {
+      "id" : "renamed##Bk0ZotZK",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "renamed",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "----------  ids\nid"
+          },
+          "alias" : "location_id"
+        }, {
+          "expression" : {
+            "expression" : "---------- properties\nname"
+          },
+          "alias" : "location_name"
+        }, {
+          "expression" : {
+            "expression" : "tax_rate"
+          }
+        }, {
+          "expression" : {
+            "expression" : "---------- timestamp\nopened_at"
+          }
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "t4dJBS8h",
+          "slug" : "source"
+        } ],
+        "outputs" : [ {
+          "id" : "NGACS2Uh",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "stg_locations##O7IxFo68" : {
+      "id" : "stg_locations##O7IxFo68",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "stg_locations",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM renamed\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "IQi5j4W8",
+          "slug" : "renamed"
+        } ],
+        "outputs" : [ {
+          "id" : "msdEc1FC",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "OC7zmMBi",
+    "source" : "source##BXQFiARM",
+    "sourcePort" : "HFsE3YAR",
+    "target" : "renamed##Bk0ZotZK",
+    "targetPort" : "t4dJBS8h"
+  }, {
+    "id" : "BZKFHs3G",
+    "source" : "renamed##Bk0ZotZK",
+    "sourcePort" : "NGACS2Uh",
+    "target" : "stg_locations##O7IxFo68",
+    "targetPort" : "IQi5j4W8"
+  } ],
+  "component" : "Model"
+}

@@ -1,0 +1,152 @@
+{
+  "id" : "stg_products",
+  "metainfo" : {
+    "label" : "stg_products",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    }
+  },
+  "processes" : {
+    "source##j34F2WqM" : {
+      "id" : "source##j34F2WqM",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "source",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "raw_products",
+          "sourceType" : "Source",
+          "sourceName" : "ecom"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Da1RNILz",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "renamed##YI7RboSO" : {
+      "id" : "renamed##YI7RboSO",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "renamed",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "----------  ids\nsku"
+          },
+          "alias" : "product_id"
+        }, {
+          "expression" : {
+            "expression" : "---------- properties\nname"
+          },
+          "alias" : "product_name"
+        }, {
+          "expression" : {
+            "expression" : "TYPE"
+          },
+          "alias" : "product_type"
+        }, {
+          "expression" : {
+            "expression" : "description"
+          },
+          "alias" : "product_description"
+        }, {
+          "expression" : {
+            "expression" : "(price / 100.0)::FLOAT"
+          },
+          "alias" : "product_price"
+        }, {
+          "expression" : {
+            "expression" : "---------- derived\nCASE\n  WHEN TYPE = 'jaffle'\n    THEN 1\n  ELSE 0\nEND"
+          },
+          "alias" : "is_food_item"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN TYPE = 'beverage'\n    THEN 1\n  ELSE 0\nEND"
+          },
+          "alias" : "is_drink_item"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "c5UbXpDk",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ ]
+          },
+          "slug" : "source"
+        } ],
+        "outputs" : [ {
+          "id" : "Z5tehRku",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "stg_products##Ooaj5Dlu" : {
+      "id" : "stg_products##Ooaj5Dlu",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "stg_products",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM renamed\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "TgvTucm7",
+          "slug" : "renamed"
+        } ],
+        "outputs" : [ {
+          "id" : "BoNVC1M7",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "rjpszuMJ",
+    "source" : "source##j34F2WqM",
+    "sourcePort" : "Da1RNILz",
+    "target" : "renamed##YI7RboSO",
+    "targetPort" : "c5UbXpDk"
+  }, {
+    "id" : "gUJ5xZyC",
+    "source" : "renamed##YI7RboSO",
+    "sourcePort" : "Z5tehRku",
+    "target" : "stg_products##Ooaj5Dlu",
+    "targetPort" : "TgvTucm7"
+  } ],
+  "component" : "Model"
+}
