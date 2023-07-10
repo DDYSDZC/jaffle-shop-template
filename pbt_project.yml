@@ -12,7 +12,6 @@ jobs: {}
 functions:
   author: null
   createdAt: '2023-06-09 06:01:28'
-  modifiedAt: '2023-06-09 06:01:28'
   gems: {}
   udfs: {}
   udafs: {}
@@ -33,7 +32,6 @@ sqlModels:
       models: []
       datasets: []
     createdAt: '2023-06-09 06:01:28'
-    modifiedAt: '2023-06-09 06:01:28'
   .prophecy/metadata/sqlmodels/orders:
     name: orders
     schema: null
@@ -49,7 +47,6 @@ sqlModels:
       models: []
       datasets: []
     createdAt: '2023-06-09 06:01:28'
-    modifiedAt: '2023-06-09 06:01:28'
   .prophecy/metadata/sqlmodels/customers:
     name: customers
     schema: null
@@ -64,7 +61,6 @@ sqlModels:
       models: []
       datasets: []
     createdAt: '2023-06-09 06:01:28'
-    modifiedAt: '2023-06-09 06:01:28'
   .prophecy/metadata/sqlmodels/stg_order_items:
     name: stg_order_items
     schema: null
@@ -79,7 +75,6 @@ sqlModels:
       models: []
       datasets: []
     createdAt: '2023-06-09 06:01:28'
-    modifiedAt: '2023-06-09 06:01:28'
   .prophecy/metadata/sqlmodels/stg_customers:
     name: stg_customers
     schema: null
@@ -94,7 +89,6 @@ sqlModels:
       models: []
       datasets: []
     createdAt: '2023-06-09 06:01:28'
-    modifiedAt: '2023-06-09 06:01:28'
   .prophecy/metadata/sqlmodels/stg_locations:
     name: stg_locations
     schema: null
@@ -109,7 +103,6 @@ sqlModels:
       models: []
       datasets: []
     createdAt: '2023-06-09 06:01:28'
-    modifiedAt: '2023-06-09 06:01:28'
   .prophecy/metadata/sqlmodels/stg_products:
     name: stg_products
     schema: null
@@ -124,7 +117,6 @@ sqlModels:
       models: []
       datasets: []
     createdAt: '2023-06-09 06:01:28'
-    modifiedAt: '2023-06-09 06:01:28'
   .prophecy/metadata/sqlmodels/stg_supplies:
     name: stg_supplies
     schema: null
@@ -140,7 +132,6 @@ sqlModels:
       models: []
       datasets: []
     createdAt: '2023-06-09 06:01:28'
-    modifiedAt: '2023-06-09 06:01:28'
 sqlMacros:
   .prophecy/metadata/sqlmacros/cents_to_dollars:
     name: cents_to_dollars
@@ -151,7 +142,6 @@ sqlMacros:
     - macros/cents_to_dollars.sql
     - .prophecy/ide/macros/cents_to_dollars.json
     createdAt: '2023-06-09 06:01:28'
-    modifiedAt: '2023-06-09 06:01:28'
 sqlSeeds: {}
 sqlSources:
   .prophecy/metadata/sqlsources/ecom:
@@ -161,7 +151,6 @@ sqlSources:
     files:
     - models/staging/__sources.yml
     createdAt: '2023-06-09 06:01:28'
-    modifiedAt: '2023-06-09 06:01:28'
     tables:
     - name: raw_customers
       schema:
@@ -170,7 +159,6 @@ sqlSources:
       description: One record per person who has purchased one or more items
       author: peterylh@163.com
       createdAt: '2023-06-09 06:01:28'
-      modifiedAt: '2023-06-09 06:01:28'
     - name: raw_orders
       schema:
         providerType: databricks
@@ -178,7 +166,6 @@ sqlSources:
       description: One record per order (consisting of one or more order items)
       author: peterylh@163.com
       createdAt: '2023-06-09 06:01:28'
-      modifiedAt: '2023-06-09 06:01:28'
     - name: raw_items
       schema:
         providerType: databricks
@@ -186,7 +173,6 @@ sqlSources:
       description: Items included in an order
       author: peterylh@163.com
       createdAt: '2023-06-09 06:01:28'
-      modifiedAt: '2023-06-09 06:01:28'
     - name: raw_stores
       schema:
         providerType: databricks
@@ -194,7 +180,6 @@ sqlSources:
       description: One record per physical store location
       author: peterylh@163.com
       createdAt: '2023-06-09 06:01:28'
-      modifiedAt: '2023-06-09 06:01:28'
     - name: raw_products
       schema:
         providerType: databricks
@@ -202,7 +187,6 @@ sqlSources:
       description: One record per SKU for items sold in stores
       author: peterylh@163.com
       createdAt: '2023-06-09 06:01:28'
-      modifiedAt: '2023-06-09 06:01:28'
     - name: raw_supplies
       schema:
         providerType: databricks
@@ -210,14 +194,12 @@ sqlSources:
       description: One record per supply per SKU of items sold in stores
       author: peterylh@163.com
       createdAt: '2023-06-09 06:01:28'
-      modifiedAt: '2023-06-09 06:01:28'
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
   description: null
   author: peterylh@163.com
   createdAt: '2023-06-09 06:01:28'
-  modifiedAt: '2023-06-09 06:01:28'
 dependencies: '[]'
 projectDependencies: {}
 pipelineConfigurations: {}
