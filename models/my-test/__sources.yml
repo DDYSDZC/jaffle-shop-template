@@ -1,0 +1,37 @@
+version: 2
+
+sources:
+  - name: ecom
+    schema: "{{ env_var('JAFFLE_RAW_SCHEMA', 'jaffle_raw') }}"
+    description: E-commerce data
+    meta:
+      external_location: "read_csv_auto('./jaffle-data/{name}.csv', header=1)"
+    tables:
+# 不注释掉的话会报如下错误：
+#@DDYSDZC ➜ /workspaces/jaffle-shop-template (main) $ dbt run
+# 07:11:32  Running with dbt=1.5.1
+# 07:11:32  Encountered an error:
+# Compilation Error
+#   dbt found two sources with the name "ecom_raw_customers".
+  
+#   Since these resources have the same name, dbt will be unable to find the correct resource
+#   when looking for source("ecom", "raw_customers").
+  
+#   To fix this, change the name of one of these resources:
+#   - source.jaffle_shop.ecom.raw_customers (models/my-test/__sources.yml)
+#   - source.jaffle_shop.ecom.raw_customers (models/staging/__sources.yml)
+
+      # - name: raw_customers
+      #   description: One record per person who has purchased one or more items
+      # - name: raw_orders
+      #   description: One record per order (consisting of one or more order items)
+      # - name: raw_items
+      #   description: Items included in an order
+      # - name: raw_stores
+      #   description: One record per physical store location
+      # - name: raw_products
+      #   description: One record per SKU for items sold in stores
+      # - name: raw_supplies
+      #   description: One record per supply per SKU of items sold in stores
+      - name: raw_customers_copy
+        description: One record per person who has purchased one or more items

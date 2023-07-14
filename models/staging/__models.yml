@@ -57,3 +57,21 @@ models:
         tests:
           - not_null
           - unique
+
+  - name: my_test_0
+    description: >
+      Just my test.
+    columns:
+      - name: customer_name
+        description: The unique key for each customer.
+      - name: num
+        description: The unique key for each customer.
+
+  - name: my_test_1
+    description: >
+      Just my test.
+    columns:
+      - name: customer_name
+        description: The unique key for each customer.
+      - name: num
+        description: The unique key for each customer. 

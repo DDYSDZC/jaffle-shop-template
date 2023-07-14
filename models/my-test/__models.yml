@@ -1,0 +1,76 @@
+version: 2
+
+models:
+  - name: my_test_model_a
+    description: >
+      Just my test.
+    columns:
+      - name: customer_id
+        description: The unique key for each customer.
+      - name: customer_name
+        description: The unique key for each customer.
+
+  - name: my_test_model_b
+    description: >
+      Just my test.
+    columns:
+      - name: customer_id
+        description: The unique key for each customer.
+      - name: customer_name
+        description: The unique key for each customer.
+
+  - name: my_test_model_c
+    description: >
+      Just my test.
+    columns:
+      - name: customer_name
+        description: The unique key for each customer.
+      - name: num
+        description: The unique key for each customer.
+
+  - name: my_test_model_d
+    description: >
+      Just my test.
+    columns:
+      - name: customer_name
+        description: The unique key for each customer.
+      - name: num
+        description: The unique key for each customer.     
+
+  - name: my_test_model_e
+    description: >
+      Just my test.
+    columns:
+      - name: customer_name
+        description: The unique key for each customer.
+      - name: num
+        description: The unique key for each customer.             
+
+  - name: my_test_model_f
+    description: >
+      Just my test.
+    columns:
+      - name: customer_name
+        description: The unique key for each customer.
+      - name: num
+        description: The unique key for each customer.       
+
+  - name: my_test_model_g
+    description: >
+      Just my test.
+    columns:
+      - name: customer_name
+        description: The unique key for each customer.
+      - name: num
+        description: The unique key for each customer.                 
+
+  - name: my_test_model_read_var
+    description: >
+      Just my test.
+    columns:
+      - name: customer_name
+        description: The unique key for each customer.
+      - name: num
+        description: The unique key for each customer.         
+      - name: read_var_out
+        description: The unique key for each customer.      
