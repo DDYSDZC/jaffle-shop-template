@@ -1,0 +1,41 @@
+{
+  "id" : "my_test_model_e",
+  "metainfo" : {
+    "label" : "my_test_model_e",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    }
+  },
+  "processes" : {
+    "fYO36VFq" : {
+      "id" : "fYO36VFq",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "my_test_model_e",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "{{\n    config(\n        materialized =\"table\"\n    )\n }}\n\nselect * \nfrom {{ ref('my_test_model_c') }} \n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "etBE8y6q",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Model"
+}

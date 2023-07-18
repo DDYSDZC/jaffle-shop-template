@@ -1,0 +1,20 @@
+{
+  "my_udf" : {
+    "name" : "my_udf",
+    "macroType" : "expression",
+    "definition" : "{{ udf('my_udf', 'my_upper')(column) }}",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "column_name",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      } ]
+    },
+    "staleState" : "none"
+  }
+}

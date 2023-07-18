@@ -1,0 +1,41 @@
+{
+  "id" : "my_test_1",
+  "metainfo" : {
+    "label" : "my_test_1",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    }
+  },
+  "processes" : {
+    "h2REhJRB" : {
+      "id" : "h2REhJRB",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "my_test_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "{{\n    config(\n        materialized =\"table\"\n    )\n }}\n\n\nwith\n\nsource as (\n\n    select * from {{ ref('my_test_0') }}\n\n)\n\n\nselect * from source",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "DOM5xUpg",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Model"
+}

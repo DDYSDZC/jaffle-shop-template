@@ -1,0 +1,41 @@
+{
+  "id" : "my_test_model_g",
+  "metainfo" : {
+    "label" : "my_test_model_g",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    }
+  },
+  "processes" : {
+    "C9804CNe" : {
+      "id" : "C9804CNe",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "my_test_model_g",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "{{\n    config(\n        materialized =\"table\"\n    )\n }}\n\nselect * \nfrom {{ ref('my_test_model_f') }} \n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Wbp9WzMd",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Model"
+}

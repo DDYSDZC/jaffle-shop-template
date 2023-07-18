@@ -1,0 +1,41 @@
+{
+  "id" : "my_test_model_udf",
+  "metainfo" : {
+    "label" : "my_test_model_udf",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    }
+  },
+  "processes" : {
+    "X029xWC0" : {
+      "id" : "X029xWC0",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "my_test_model_udf",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "{{\n    config(\n        materialized =\"table\"\n    )\n }}\n\nwith\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_customers_copy') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        id as customer_id,\n\n        ---------- properties\n        name as customer_name\n\n    from source\n\n)\n\n\n\nselect length_grapheme('aaa🤦🏼‍♂️🤦🏽‍♀️aaa') as duck_function, * from renamed\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "VwdvgcgU",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Model"
+}

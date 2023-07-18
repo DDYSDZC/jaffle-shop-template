@@ -1,0 +1,41 @@
+{
+  "id" : "my_test_0",
+  "metainfo" : {
+    "label" : "my_test_0",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    }
+  },
+  "processes" : {
+    "z1bdoKKU" : {
+      "id" : "z1bdoKKU",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "my_test_0",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "{{\n    config(\n        materialized =\"table\"\n    )\n }}\n\nwith\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_customers') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        id as customer_id,\n\n        ---------- properties\n        name as customer_name\n\n    from source\n\n)\n\nselect customer_name, count(*) as num from renamed group by customer_name order by customer_name asc\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "IBwegoRR",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Model"
+}

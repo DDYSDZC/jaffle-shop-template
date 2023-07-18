@@ -1,0 +1,41 @@
+{
+  "id" : "my_test_model_a",
+  "metainfo" : {
+    "label" : "my_test_model_a",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    }
+  },
+  "processes" : {
+    "baFxp9WE" : {
+      "id" : "baFxp9WE",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "my_test_model_a",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "{{\n    config(\n        materialized =\"table\"\n    )\n }}\n\nwith\n\nsource as (\n\n    select * from {{ source('ecom', 'raw_customers_copy') }}\n\n),\n\nrenamed as (\n\n    select\n\n        ----------  ids\n        id as customer_id,\n\n        ---------- properties\n        name as customer_name\n\n    from source\n\n)\n\nselect * from renamed\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "v65t6863",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Model"
+}

@@ -1,0 +1,41 @@
+{
+  "id" : "my_test_model_f",
+  "metainfo" : {
+    "label" : "my_test_model_f",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    }
+  },
+  "processes" : {
+    "znKScWpf" : {
+      "id" : "znKScWpf",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "my_test_model_f",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "{{\n    config(\n        materialized =\"table\"\n    )\n }}\n\n\nselect customer_name, count(*) as num \nfrom {{ ref('my_test_model_b') }} \ngroup by customer_name \norder by num desc\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Xx8mxqF3",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Model"
+}

@@ -1,0 +1,147 @@
+{
+  "id" : "stg_supplies",
+  "metainfo" : {
+    "label" : "stg_supplies",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "userDefinedConfig" : {
+        "vars" : { }
+      }
+    }
+  },
+  "processes" : {
+    "source##R3cV2ozC" : {
+      "id" : "source##R3cV2ozC",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "source",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "raw_supplies",
+          "sourceType" : "Source",
+          "sourceName" : "ecom"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "VMWLuGq0",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "renamed##OcnaGxDC" : {
+      "id" : "renamed##OcnaGxDC",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "renamed",
+        "phase" : 0,
+        "macroDependencies" : [ "dbt_utils.generate_surrogate_key" ]
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "----------  ids\n{{ dbt_utils.generate_surrogate_key(['id', 'sku']) }}"
+          },
+          "alias" : "supply_uuid"
+        }, {
+          "expression" : {
+            "expression" : "id"
+          },
+          "alias" : "supply_id"
+        }, {
+          "expression" : {
+            "expression" : "sku"
+          },
+          "alias" : "product_id"
+        }, {
+          "expression" : {
+            "expression" : "---------- properties\nname"
+          },
+          "alias" : "supply_name"
+        }, {
+          "expression" : {
+            "expression" : "(cost / 100.0)::FLOAT"
+          },
+          "alias" : "supply_cost"
+        }, {
+          "expression" : {
+            "expression" : "perishable"
+          },
+          "alias" : "is_perishable_supply"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "vi5BweVe",
+          "schema" : {
+            "providerType" : "databricks",
+            "fields" : [ ]
+          },
+          "slug" : "source"
+        } ],
+        "outputs" : [ {
+          "id" : "r8dCti14",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "stg_supplies##ULOqceBE" : {
+      "id" : "stg_supplies##ULOqceBE",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "stg_supplies",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM renamed\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wTijPMru",
+          "slug" : "renamed"
+        } ],
+        "outputs" : [ {
+          "id" : "Bt8mXcpB",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "apCfNNBH",
+    "source" : "source##R3cV2ozC",
+    "sourcePort" : "VMWLuGq0",
+    "target" : "renamed##OcnaGxDC",
+    "targetPort" : "vi5BweVe"
+  }, {
+    "id" : "CLdzrCSQ",
+    "source" : "renamed##OcnaGxDC",
+    "sourcePort" : "r8dCti14",
+    "target" : "stg_supplies##ULOqceBE",
+    "targetPort" : "wTijPMru"
+  } ],
+  "component" : "Model"
+}

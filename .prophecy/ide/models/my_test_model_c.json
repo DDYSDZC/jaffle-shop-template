@@ -1,0 +1,41 @@
+{
+  "id" : "my_test_model_c",
+  "metainfo" : {
+    "label" : "my_test_model_c",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    }
+  },
+  "processes" : {
+    "OO1T3nFW" : {
+      "id" : "OO1T3nFW",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "my_test_model_c",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : true,
+        "incrementalEditorDisabled" : true,
+        "query" : "{{\n    config(\n        materialized =\"table\"\n    )\n }}\n\n\nselect customer_name, count(*) as num  from\n(\n    select *\n    from {{ ref('my_test_model_a') }} \n\n    union all\n\n    select *\n    from {{ ref('my_test_model_b') }} \n) Tmp\ngroup by customer_name \norder by num desc\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "iwBNREh7",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Model"
+}

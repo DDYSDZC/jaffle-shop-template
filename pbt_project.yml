@@ -1,0 +1,378 @@
+name: new_jaffle_shop_template
+description: ''
+version: 0.0.1
+author: null
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs: {}
+functions:
+  author: null
+  createdAt: '2023-07-18 12:30:54'
+  gems: {}
+  udfs: {}
+  udafs: {}
+  expressions: {}
+subgraphs: {}
+sqlModels:
+  .prophecy/metadata/sqlmodels/my_test_model_a:
+    name: my_test_model_a
+    schema: null
+    description: |
+      Just my test.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/my-test/my_test_model_a.sql
+    - .prophecy/ide/models/my_test_model_a.json
+    - models/my-test/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/stg_orders:
+    name: stg_orders
+    schema: null
+    description: Order data with basic cleaning and transformation applied, one row
+      per order.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/staging/stg_orders.sql
+    - .prophecy/ide/models/stg_orders.json
+    - models/staging/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/my_test_model_f:
+    name: my_test_model_f
+    schema: null
+    description: |
+      Just my test.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/my-test/my_test_model_f.sql
+    - .prophecy/ide/models/my_test_model_f.json
+    - models/my-test/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/my_test_model_b:
+    name: my_test_model_b
+    schema: null
+    description: |
+      Just my test.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/my-test/my_test_model_b.sql
+    - .prophecy/ide/models/my_test_model_b.json
+    - models/my-test/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/orders:
+    name: orders
+    schema: null
+    description: Order overview data mart, offering key details for each order inlcluding
+      if it's a customer's first order and a food vs. drink item breakdown. One row
+      per order.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/marts/orders.sql
+    - .prophecy/ide/models/orders.json
+    - models/marts/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/my_test_1:
+    name: my_test_1
+    schema: null
+    description: |
+      Just my test.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/staging/my_test_1.sql
+    - .prophecy/ide/models/my_test_1.json
+    - models/staging/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/my_test_model_e:
+    name: my_test_model_e
+    schema: null
+    description: |
+      Just my test.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/my-test/my_test_model_e.sql
+    - .prophecy/ide/models/my_test_model_e.json
+    - models/my-test/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/customers:
+    name: customers
+    schema: null
+    description: Customer overview data mart, offering key details for each unique
+      customer. One row per customer.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/marts/customers.sql
+    - .prophecy/ide/models/customers.json
+    - models/marts/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/my_test_model_c:
+    name: my_test_model_c
+    schema: null
+    description: |
+      Just my test.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/my-test/my_test_model_c.sql
+    - .prophecy/ide/models/my_test_model_c.json
+    - models/my-test/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/my_test_0:
+    name: my_test_0
+    schema: null
+    description: |
+      Just my test.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/staging/my_test_0.sql
+    - .prophecy/ide/models/my_test_0.json
+    - models/staging/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/my_test_model_d:
+    name: my_test_model_d
+    schema: null
+    description: |
+      Just my test.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/my-test/my_test_model_d.sql
+    - .prophecy/ide/models/my_test_model_d.json
+    - models/my-test/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/stg_order_items:
+    name: stg_order_items
+    schema: null
+    description: Individual food and drink items that make up our orders, one row
+      per item.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/staging/stg_order_items.sql
+    - .prophecy/ide/models/stg_order_items.json
+    - models/staging/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/my_test_model_udf:
+    name: my_test_model_udf
+    schema: null
+    description: |
+      Just my test.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/my-test/my_test_model_udf.sql
+    - .prophecy/ide/models/my_test_model_udf.json
+    - models/my-test/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/stg_customers:
+    name: stg_customers
+    schema: null
+    description: Customer data with basic cleaning and transformation applied, one
+      row per customer.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/staging/stg_customers.sql
+    - .prophecy/ide/models/stg_customers.json
+    - models/staging/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/my_test_model_g:
+    name: my_test_model_g
+    schema: null
+    description: |
+      Just my test.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/my-test/my_test_model_g.sql
+    - .prophecy/ide/models/my_test_model_g.json
+    - models/my-test/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/my_test_model_read_var:
+    name: my_test_model_read_var
+    schema: null
+    description: |
+      Just my test.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/my-test/my_test_model_read_var.sql
+    - .prophecy/ide/models/my_test_model_read_var.json
+    - models/my-test/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/stg_locations:
+    name: stg_locations
+    schema: null
+    description: List of open locations with basic cleaning and transformation applied,
+      one row per location.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/staging/stg_locations.sql
+    - .prophecy/ide/models/stg_locations.json
+    - models/staging/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/stg_products:
+    name: stg_products
+    schema: null
+    description: Product (food and drink items that can be ordered) data with basic
+      cleaning and transformation applied, one row per product.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/staging/stg_products.sql
+    - .prophecy/ide/models/stg_products.json
+    - models/staging/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmodels/stg_supplies:
+    name: stg_supplies
+    schema: null
+    description: |
+      List of our supply expenses data with basic cleaning and transformation applied.
+      One row per supply cost, not per supply. As supply costs fluctuate they receive a new row with a new UUID. Thus there can be multiple rows per supply_id.
+    author: chaoz852349027@gmail.com
+    files:
+    - models/staging/stg_supplies.sql
+    - .prophecy/ide/models/stg_supplies.json
+    - models/staging/__models.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-07-18 12:30:55'
+sqlMacros:
+  .prophecy/metadata/sqlmacros/cents_to_dollars:
+    name: cents_to_dollars
+    macroType: expression
+    description: null
+    author: chaoz852349027@gmail.com
+    files:
+    - macros/cents_to_dollars.sql
+    - .prophecy/ide/macros/cents_to_dollars.json
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmacros/my_test_macros:
+    name: my_test_macros
+    macroType: expression
+    description: null
+    author: chaoz852349027@gmail.com
+    files:
+    - macros/my_test_macros.sql
+    - .prophecy/ide/macros/my_test_macros.json
+    createdAt: '2023-07-18 12:30:55'
+  .prophecy/metadata/sqlmacros/my_udf:
+    name: my_udf
+    macroType: expression
+    description: null
+    author: chaoz852349027@gmail.com
+    files:
+    - macros/my_udf.sql
+    - .prophecy/ide/macros/my_udf.json
+    createdAt: '2023-07-18 12:30:55'
+sqlSeeds: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/ecom:
+    name: ecom
+    description: E-commerce data
+    author: chaoz852349027@gmail.com
+    files:
+    - models/my-test/__sources.yml
+    - models/staging/__sources.yml
+    createdAt: '2023-07-18 12:30:55'
+    tables:
+    - name: raw_customers
+      schema:
+        providerType: databricks
+        fields: []
+      description: One record per person who has purchased one or more items
+      author: chaoz852349027@gmail.com
+      createdAt: '2023-07-18 12:30:55'
+    - name: raw_orders
+      schema:
+        providerType: databricks
+        fields: []
+      description: One record per order (consisting of one or more order items)
+      author: chaoz852349027@gmail.com
+      createdAt: '2023-07-18 12:30:55'
+    - name: raw_items
+      schema:
+        providerType: databricks
+        fields: []
+      description: Items included in an order
+      author: chaoz852349027@gmail.com
+      createdAt: '2023-07-18 12:30:55'
+    - name: raw_stores
+      schema:
+        providerType: databricks
+        fields: []
+      description: One record per physical store location
+      author: chaoz852349027@gmail.com
+      createdAt: '2023-07-18 12:30:55'
+    - name: raw_products
+      schema:
+        providerType: databricks
+        fields: []
+      description: One record per SKU for items sold in stores
+      author: chaoz852349027@gmail.com
+      createdAt: '2023-07-18 12:30:55'
+    - name: raw_supplies
+      schema:
+        providerType: databricks
+        fields: []
+      description: One record per supply per SKU of items sold in stores
+      author: chaoz852349027@gmail.com
+      createdAt: '2023-07-18 12:30:55'
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: chaoz852349027@gmail.com
+  createdAt: '2023-07-18 12:30:54'
+dependencies: '[]'
+projectDependencies: {}
+pipelineConfigurations: {}
