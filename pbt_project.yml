@@ -321,8 +321,8 @@ sqlSources:
     description: E-commerce data
     author: chaoz852349027@gmail.com
     files:
-    - models/my-test/__sources.yml
     - models/staging/__sources.yml
+    - models/my-test/__sources.yml
     createdAt: '2023-07-18 12:30:55'
     tables:
     - name: raw_customers
