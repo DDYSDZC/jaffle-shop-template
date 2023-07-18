@@ -27,4 +27,5 @@ renamed as (
 )
 
 
-select {{my_test_macros(id)}} as my_test_macros, * from renamed USING SAMPLE 2 ROWS
+
+select length_grapheme('aaa🤦🏼‍♂️🤦🏽‍♀️aaa') as duck_function, * from renamed

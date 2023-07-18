@@ -74,3 +74,22 @@ models:
         description: The unique key for each customer.         
       - name: read_var_out
         description: The unique key for each customer.      
+      - name: my_test_macros
+        description: The unique key for each customer.  
+      - name: my_test_python_udf
+        description: The unique key for each customer.  
+
+  - name: my_test_model_udf
+    description: >
+      Just my test.
+    columns:
+      - name: customer_name
+        description: The unique key for each customer.
+      - name: num
+        description: The unique key for each customer.         
+      - name: read_var_out
+        description: The unique key for each customer.      
+      - name: my_test_macros
+        description: The unique key for each customer.  
+      - name: bit_count
+        description: The unique key for each customer.          
